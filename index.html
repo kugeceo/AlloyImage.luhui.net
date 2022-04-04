@@ -1,0 +1,386 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="author" content="Tencent.AlloyTeam.Dorsywang" />
+  <meta name="copyright" content="Tencent.AlloyTeam" />
+  <meta name="keywords" content="alloyPhoto 简约版,alloyImage,alloyPhoto,html5 canvas,alloyTeam" />
+  <meta name="description" content="alloyPhoto，一款基于alloyImage库的图像处理应用,alloyImage是基于html5的图像处理js代码库。" />
+  
+	<title>AlloyImage</title>
+  <link media="all" rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+  <script type="text/javascript">
+(function(){
+  var donotShow = function(){
+    alert("建议使用IE10、chrome或firefox浏览器");
+    window.onload = function(){
+    };
+  };
+  var ieFlag = 0, chromeFlag = 0;
+  var sUserAgent = navigator.userAgent;  
+  var fAppVersion = parseFloat(navigator.appVersion);  
+  var isIE = sUserAgent.indexOf("compatible") > -1 && sUserAgent.indexOf("MSIE") > -1; 
+  var isFirefox = sUserAgent.toLowerCase().indexOf("firefox") > -1; 
+  
+  if(isIE){
+    var result = /MSIE (\d+\.\d+)/.exec(sUserAgent);
+    if(parseFloat(result[1]) > 9){
+      ieFlag = 1;
+    }else{
+    }
+  }
+
+  var chromeFlag = sUserAgent.indexOf("Chrome") > -1 ;  
+  if(ieFlag || chromeFlag || isFirefox){
+    
+  }else{
+    donotShow();
+  }
+
+  
+  })();
+
+  </script>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <nav>
+      <a href="./" id="home">首页</a>
+      <a href="docs.html#mutiThread" target="_self" id="docs">文档<span style="color:red;position:relative;top:-5px;left:5px;font-size:12px;">New</span></a>
+      <a href="download/alloyImage-1.1.zip" target="_self" id="download">下载</a>
+    </nav>
+    <div class="hoverBorder" id="hoverBorder"></div>
+  </header>
+
+  <section class="content" style="margin-top:0;">
+    <article class="demo" style="width:100%;margin-bottom:30px;">
+      <section class="demoPics" style="width:100%;height:480px;">
+        <div class="flashWrapper" style="width:1003px;">
+          <div class="waitMsg" id="waitMsg">处理中</div>
+          <div class="flash" id="flash">
+            <img src="img/home/4.jpg" id="pic0" alt="" />
+            <img src="img/home/scen.jpg" id="pic2" alt="" />
+            <img src="img/home/pet.jpg" id="pic2" alt="" />
+            <img src="img/home/inner.jpg" id="pic1" alt="" />
+            <img src="img/home/big.jpg" id="pic2" alt="" />
+            <img src="img/home/stop.jpg" id="pic4" alt="" />
+          </div>
+        </div>
+        <div class="title" id="demoTitle">加载图片中...</div>
+        <div class="picNav" id="picNav">
+          <a href="javascript:;" class="curr">.</a>
+          <a href="javascript:;">.</a>
+          <a href="javascript:;">.</a>
+          <a href="javascript:;">.</a>
+          <a href="javascript:;">.</a>
+          <a href="javascript:;">.</a>
+        </div>
+
+      </section>
+    </article>
+
+   <aside class="links">
+      <h1>Links</h1>
+      <div class="linksWrapper">
+        <a href="http://www.alloyteam.com" target="_blank">AlloyTeam</a><br />
+        <a href="fractal.html" target="_blank">Mandelbrot分形</a><br />
+        <a href="test.html" target="_blank">多线程测试</a><br />
+        <a href="http://alloyteam.github.io/AlloyDesigner/" target="_blank">AlloyDesigner<span style="color:red;position:relative;top:-5px;left:5px;font-size:12px;">New</span></a><br />
+        <br />
+        <a href="http://wp.qq.com/wpa/qunwpa?idkey=a38613ed0dfb7256f40908530ab106b85da7785cc564389a0662abd5e0cc5277" target="_blank">QQ群: 300197791</a>
+        <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=a38613ed0dfb7256f40908530ab106b85da7785cc564389a0662abd5e0cc5277"><img border="0" src="http://wp.qq.com/images/group.png" alt="点击这里加入此群" title="点击这里加入此群"></a>
+      </div>
+    </aside>
+
+    <section class="introWrapper">
+      <h1>Start</h1>
+      <section class="demoPics">
+        <a href="alloyphoto.html" id="linkSimple" target="_blank"></a>
+        <a href="alloyphotopro.html" id="linkPro" target="_blank"></a>
+        <a href="https://github.com/AlloyTeam/AlloyImage" target="_blank" id="linkGit"></a>
+        <ul class="apintro">
+          <li style="margin-left:0;">
+            <h2>AlloyImage</h2>
+            <ul>
+              <li>
+                基于html5的JS图片图像处理库
+              </li>
+              <li>
+                简单快捷的API
+              </li>
+              <li>
+                多图层操作
+              </li>
+              <li>
+                与PS对应的17种图层混合模式
+              </li>
+              <li>
+                多种基本滤镜处理效果
+              </li>
+              <li>
+                多种组合风格效果 
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>AlloyPhoto</h2>
+            <ul>
+              <li>
+                基于AlloyImage的Web应用
+              </li>
+              <li>
+                简约版和专业版
+              </li>
+              <li>
+                AlloyImage能力展示
+              </li>
+              <li>
+                AlloyImage的强势Demo
+              </li>
+              <li>
+                方便快捷图片在线图像处理
+              </li>
+              <li>
+                保存图片到本地
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>SourceCode</h2>
+            <ul>
+              <li>
+                清晰的架构体系
+              </li>
+              <li>
+                方便扩展的插件系统
+              </li>
+              <li>
+                开放的数学处理模块
+              </li>
+              <li>
+                灵活的Public API方法重载
+              </li>
+              <li>
+                单例化主处理对象,节省内存
+              </li>
+              <li>
+                中英文友好参数映射支持
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </section>
+    </section>
+
+ 
+  </section>
+
+  <footer>
+    <section class="footerNav" style="display:none;">
+    <a href="http://www.alloyteam.com" target="_blank">AlloyTeam</a> | <a href="http://www.dorsywang.com" target="_blank">Blog</a>
+    </section>
+    <section class="copyright">
+    Copyright ©  2013 <a href="http://www.alloyteam.com" target="_blank">Tencent AlloyTeam.</a> All Rights Reserved. <br /><a target="_blank" style="text-decoration:none;" href="view-source:http://alloyteam.github.com/AlloyPhoto/"><span style="font-size:12px;color:#b7b4b4;">codeIn HTML5</span></a>
+    </section>
+  </footer>
+  <script type="text/javascript" src="js/combined/alloyimage.js"></script>
+  <script type="text/javascript">
+(function(){
+    var WIDTH = 1003,
+        HEIGHT = 432,
+        NUM = 6;
+        TITLE = [
+          "warmAutumn",
+          "soften",
+          "lomo",
+          "sketch",
+          "softenFace",
+          "vintage"
+        ];
+
+    var COMCODE = [
+    'var m = this.clone().act("色相/饱和度调节",36,47,8,true);<br />return this.add(<br />m, "叠加"<br />);',
+    'var m = this.clone().act("色相/饱和度调节",36,47,8,true);<br />return this.add(<br />m, "叠加"<br />);',
+    'var m = this.clone().act("色相/饱和度调节",36,47,8,true);<br />return this.add(<br />m, "叠加"<br />);',
+    'var m = this.clone().act("色相/饱和度调节",36,47,8,true);<br />return this.add(<br />m, "叠加"<br />);',
+    'var m = this.clone().act("色相/饱和度调节",36,47,8,true);<br />return this.add(<br />m, "叠加"<br />);'
+    ];
+
+    var Tools = {
+      each: function(els, func){
+        for(var i = 0, n = els.length; i < n; i ++){
+          func.call(els[i], i);
+        }
+      },
+
+      addClass: function(el, className){
+        if(el.className.match(className)){
+        }else{
+          el.className += " " + className;
+        }
+      },
+
+      removeClass: function(el, className){
+        el.className = el.className.replace(new RegExp(" ?" + className), "");
+      }
+    };
+
+    var Flash = {
+      el: null,//元素
+      curr: 0,
+
+      init: function(){
+        this.el = document.getElementById("flash");
+        this.curr = 0;
+        this.doCache();
+        this.start();
+        this.eventAtt();
+      },
+
+      start: function(){
+        var _this = this;
+        clearInterval(this.timer);
+        this.timer = setInterval(move,3000);
+
+        function move(){
+            _this.curr ++;
+            _this.curr %= NUM;
+
+            _this.moveTo(_this.curr);
+        }
+
+      },
+
+      moveTo: function(i){
+        this.el.style.left = -(i * WIDTH) + "px";
+        this.showInfo(i);
+      },
+
+      showInfo: function(i){
+          var as = document.getElementById("picNav").getElementsByTagName("a");
+          Tools.each(as, function(){
+              Tools.removeClass(this, "curr");
+          });
+
+          Tools.addClass(as[i], "curr");
+          var demoTitle = document.getElementById("demoTitle");
+          demoTitle.innerHTML = "<span class='code'>AlloyImage(img).ps(\"" + TITLE[i] + "\").replace(img);</span> 　　<div class='button'><a href='javascript:;' id='runCode' class='mask'>运行代码</a></div> <div class='button'><a href='javascript:;' class='mask' id='undo'>撤回原图</a></div> ";
+      },
+
+      stop: function(){
+        clearInterval(this.timer);
+      },
+
+      eventAtt: function(){
+          var as = document.getElementById("picNav").getElementsByTagName("a");
+          var _this = this, timer;
+          Tools.each(as, function(i){
+              this.onclick = function(){
+                return function(){
+                  _this.stop();
+                  _this.moveTo(i);
+                  _this.curr = i;
+
+                  clearTimeout(timer);
+                  timer = setTimeout(function(){
+                      _this.start();
+                  }, 2000);
+                };
+              }();
+          });
+
+          var imgs = document.getElementById("flash").getElementsByTagName("img");
+          Tools.each(imgs, function(i){
+              this.onmouseover = function(){
+                return function(){
+                  _this.stop();
+                };
+              }();
+
+              this.onmouseout = function(){
+                return function(){
+                   _this.start();
+                };
+              }();
+          });
+
+          var demoTitle = document.getElementById("demoTitle");
+          demoTitle.onmouseover = function(){
+            _this.stop();
+          };
+
+          demoTitle.onmouseout = function(){
+            _this.start();
+          };
+
+          var waitMsg = document.getElementById("waitMsg");
+          demoTitle.onclick = function(e){
+            var that = this;
+            if(e.target.id == "runCode"){
+
+              setTimeout(function(){
+                AlloyImage(imgs[_this.curr]).ps(TITLE[_this.curr]).replace(imgs[_this.curr]);
+                waitMsg.style.display = "none";
+              }, 2);
+
+              waitMsg.style.display = "block";
+              
+
+            }else if(e.target.id == "undo"){
+              _this.cache[_this.curr].old.replace(imgs[_this.curr]);
+            }else if(e.target.id == "viewRaw"){
+            }
+          };
+
+      },
+
+      doCache: function(){//预处理
+         var _this = this,
+         img = document.getElementById("flash").getElementsByTagName("img");
+         _this.cache =[];
+
+          Tools.each(TITLE, function(i){
+              _this.cache[i] = {
+                old: AlloyImage(img[i]),
+              };
+          });
+     }
+    };
+    window.onload = function(){
+      Flash.init();
+    };
+
+    var as = document.getElementById("docs");
+    var border = document.getElementById("hoverBorder");
+      as.onmouseover = function(){
+        border.style.left = "119px";
+      };
+
+      as.onmouseout = function(){
+        border.style.left = "0px";
+      };
+
+    var download = document.getElementById("download");
+    var border = document.getElementById("hoverBorder");
+      download.onmouseover = function(){
+        border.style.left = "235px";
+      };
+
+      download.onmouseout = function(){
+        border.style.left = "0px";
+      };
+
+ })();
+</script>
+
+
+
+</div>
+</body>
+</html>
